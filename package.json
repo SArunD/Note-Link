@@ -1,7 +1,7 @@
 {
-  "name": "email-link",
+  "name": "note-link",
   "version": "1.0.0",
-  "description": "Create Webpage Links For Your Emails",
+  "description": "Generate Webpage Links For Your Notes",
   "main": "server.js",
   "scripts": {
     "server": "nodemon backend/server.js"
