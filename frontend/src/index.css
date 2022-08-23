@@ -14,7 +14,7 @@ body {
 .form-container {
 	background-color: white;
 	width: 900px;
-	margin: 115px auto;
+	margin: 0 auto; /* 115px auto */
 	border-radius: 10px;
 }
 
@@ -65,4 +65,9 @@ button:hover {
 
 .body-label, h2 {
 	margin-bottom: 5px;
+}
+
+.editor-error {
+	color: red;
+	margin-bottom: 4px;
 }
