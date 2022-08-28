@@ -6,6 +6,72 @@ import { useNavigate } from 'react-router-dom'
 import handler from '../handler'
 
 const AddNote = () => {
+	const modules = {
+		toolbar: [
+			[{ header: [1, 2, false] }],
+			['bold', 'italic', 'underline', 'strike', 'blockquote'],
+			[
+				{
+					color: [
+						'#000000',
+						'#666666',
+						'#B7B7B7',
+						'#D9D9D9',
+						'#980000',
+						'#FF0000',
+						'#FF9900',
+						'#FFFF00',
+						'#00FF00',
+						'#00FFFF',
+						'#4A86E8',
+						'#0000FF',
+						'#9900FF',
+						'#FF00FF',
+					],
+				},
+				{
+					background: [
+						'#000000',
+						'#666666',
+						'#B7B7B7',
+						'#D9D9D9',
+						'#980000',
+						'#FF0000',
+						'#FF9900',
+						'#FFFF00',
+						'#00FF00',
+						'#00FFFF',
+						'#4A86E8',
+						'#0000FF',
+						'#9900FF',
+						'#FF00FF',
+					],
+				}
+			],
+			[
+				{ list: 'ordered' },
+				{ list: 'bullet' },
+				{ indent: '-1' },
+				{ indent: '+1' },
+			],
+			['clean'],
+		],
+	}
+
+	const formats = [
+		'header',
+		'bold',
+		'italic',
+		'underline',
+		'strike',
+		'blockquote',
+		'color',
+		'background',
+		'list',
+		'bullet',
+		'indent',
+	]
+
 	const [value, setValue] = useState('')
 	const [err, setErr] = useState(false)
 
@@ -23,7 +89,7 @@ const AddNote = () => {
 		} else {
 			setErr(false)
 
-			handler.notePOST(value)
+			handler.POST(value)
 
 			setInterval(() => {
 				setValue('')
@@ -46,7 +112,9 @@ const AddNote = () => {
 						theme="snow"
 						value={value}
 						onChange={setValue}
-						className="quill-editor"
+						className="editor-box"
+						modules={modules}
+						formats={formats}
 					/>
 				</div>
 				<div className="button-container">

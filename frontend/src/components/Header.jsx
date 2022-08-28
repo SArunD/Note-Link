@@ -2,9 +2,11 @@ const Header = () => {
   return (
     <header>
       <nav>
+        <a href="/dashboard">Dashboard</a>
+        <br />
         <a href="/add-note">Add Note</a>
         <br />
-        <a href="/view-note">View Note</a>
+        <a href="/edit-note">Edit Note</a>
       </nav>
     </header>
   )
