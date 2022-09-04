@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 
-const API_URL = 'http://localhost:5000/api/notes'
+const API_URL = process.env.NODE_ENV === 'production' ? 'https://note-link.herokuapp.com/api/notes' : 'http://localhost:5000/api/notes'
 
 const GET = (id) => {
 	const [currNote, setCurrNote] = useState({})
