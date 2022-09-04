@@ -1,8 +1,10 @@
 import eventHandler from '../eventHandler'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 const ViewNote = () => {
 	const { id } = useParams()
+
+	const navigate = useNavigate()
 
 	const body = eventHandler.GET(id).body
 
@@ -13,6 +15,7 @@ const ViewNote = () => {
 				className="view-note ql-editor"
 				dangerouslySetInnerHTML={{ __html: body }}
 			></div>
+			<button className='return' onClick={() => navigate('/dashboard')}>Return To Dashboard</button>
 		</div>
 	)
 }
