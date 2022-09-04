@@ -1,6 +1,7 @@
 const modules = {
 	toolbar: [
-		[{ header: [1, 2, false] }],
+		[{ header: [1, 2, 3, false] }],
+		[{ size: ['huge', 'large', false, 'small']}],
 		['bold', 'italic', 'underline', 'strike', 'blockquote'],
 		[
 			{
@@ -23,10 +24,10 @@ const modules = {
 			},
 			{
 				background: [
+					false,
 					'#000000',
 					'#666666',
 					'#B7B7B7',
-					'#D9D9D9',
 					'#980000',
 					'#FF0000',
 					'#FF9900',
@@ -52,6 +53,7 @@ const modules = {
 
 const formats = [
 	'header',
+	'size',
 	'bold',
 	'italic',
 	'underline',
@@ -65,8 +67,8 @@ const formats = [
 ]
 
 const settings = {
-	modules, 
-	formats
+	modules,
+	formats,
 }
 
 export default settings
