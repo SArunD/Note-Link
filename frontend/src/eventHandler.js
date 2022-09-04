@@ -10,7 +10,6 @@ const GET = (id) => {
 	useEffect(() => {
 		const getCurrNote = async () => {
 			const response = await axios.get(API_URL)
-			// setCurrNote(response.data.filter((note) => note._id === id)[0])
 			if (id) {
 				setCurrNote(response.data.filter((note) => note._id === id)[0])
 			} else {
@@ -56,11 +55,11 @@ const DELETE = (id) => {
 	window.location.reload(false)
 }
 
-const handler = {
+const eventHandler = {
 	GET,
 	POST,
 	PUT,
 	DELETE,
 }
 
-export default handler
+export default eventHandler

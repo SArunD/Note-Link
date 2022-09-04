@@ -1,38 +1,19 @@
-import handler from '../handler'
 import moment from 'moment'
-import { TbFileSearch, TbEdit } from 'react-icons/tb'
-import { IoTrashOutline } from 'react-icons/io5'
+import eventHandler from '../eventHandler'
 import { useNavigate } from 'react-router-dom'
+import { TbFileSearch, TbEdit, TbCopy } from 'react-icons/tb'
+import { IoTrashOutline } from 'react-icons/io5'
 
 const Dashboard = () => {
-	const allNotes = handler.GET()
+	const allNotes = eventHandler.GET()
 
 	const navigate = useNavigate()
 
 	return (
-		// <div className="notes-container">
-		// 	{/* <div className="note-container">
-		//     <h2>Title</h2>
-		//     <p>Created At</p>
-		//     <p>Content</p>
-		//     <span>Options</span>
-		//   </div> */}
-		// 	{/* style={note.createdAt !== note.updatedAt ? {borderBottom: "5px solid green"} : null} */}
-		// 	{allNotes.map((note) => (
-		// 		<div className="note-container" key={note._id}>
-		// 			{/* <h2>Note #{allNotes.indexOf(note) + 1}</h2> */}
-		// 			<h2>{note.body}</h2>
-		// 			<p>{moment(note.createdAt).format('LL - hh:mm A')}</p>
-		// 			<div className="icon-container">
-		// 				<TbFileSearch />
-		// 				<TbEdit />
-		// 				<IoTrashOutline />
-		// 			</div>
-		// 		</div>
-		// 	))}
-		// </div>
-
 		<div className="notes-container">
+			{allNotes.length === 0 && (
+				<h3 className="not-found-msg">No Notes Found!</h3>
+			)}
 			{allNotes.map((note) => (
 				<div className="note-container" key={note._id}>
 					<h2 style={{ marginBottom: 0 }}>
@@ -40,6 +21,16 @@ const Dashboard = () => {
 					</h2>
 					<p>{moment(note.createdAt).format('LL - hh:mm A')}</p>
 					<div className="icon-container">
+						<TbCopy
+							title="Copy Note Link..."
+							className="copy-icon"
+							onClick={() => {
+								const link = `/view-note/${note._id}`
+								navigator.clipboard
+									.writeText(link)
+									.then(() => alert('Note Link Copied...'))
+							}}
+						/>
 						<TbFileSearch
 							title="View This Note..."
 							className="search-icon"
@@ -58,7 +49,7 @@ const Dashboard = () => {
 						<IoTrashOutline
 							title="Delete This Note..."
 							className="delete-icon"
-							onClick={() => handler.DELETE(note._id)}
+							onClick={() => eventHandler.DELETE(note._id)}
 						/>
 					</div>
 				</div>
