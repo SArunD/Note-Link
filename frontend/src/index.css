@@ -116,7 +116,7 @@ h2 {
 }
 
 .notes-container {
-	width: 950px;
+	width: 1075px;
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-evenly;
@@ -131,22 +131,25 @@ h2 {
 	text-align: center;
 	border-radius: 5px;
 	padding: 10px;
-	width: 285px;
+	width: 325px;
 	margin-bottom: 18px;
 }
 .icon-container {
 	display: flex;
 	width: 160px;
 	margin: 0 auto;
-	padding: 10px 10px 5px 10px;
+	padding: 7px 10px 4px 10px;
 	justify-content: space-evenly;
-	font-size: 24px;
+	font-size: 25px;
 	position: relative;
 }
-
-.copy-icon {
-	font-size: 26px;
+p em {
+	margin-right: 10px;
 }
+.date-time {
+	margin: 2px 1px 0 0;
+}
+
 .copy-icon:hover {
 	cursor: pointer;
 	color: goldenrod;
