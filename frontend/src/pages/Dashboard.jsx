@@ -36,7 +36,7 @@ const Dashboard = () => {
 							title="Copy This Note Link..."
 							className="copy-icon"
 							onClick={() => {
-								const link = `https://note-link.herokuapp.com/view-note/${note._id}`
+								const link = `https://note-link-lu6k.onrender.com/view-note/${note._id}`
 								navigator.clipboard
 									.writeText(link)
 									.then(() => alert('LINK COPIED SUCCESSFULLY...'))
