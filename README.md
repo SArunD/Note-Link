@@ -1,4 +1,6 @@
-To visit the deployed version of this project, click: [Note-Link](https://note-link.herokuapp.com/dashboard)
+To visit the deployed version of this project, click: [Note-Link](https://note-link-lu6k.onrender.com/dashboard)
+
+https://github.com/SArunD/Note-Link/assets/67386158/55f8e1cb-8002-4da0-ac8a-0cc64f0bcf65
 
 ---
 
@@ -13,8 +15,8 @@ My motivation for working on this project was to learn Full-Stack Development. T
 This is a checklist for some future plans I have for this project.
 
 - [x] Create a website using technologies from the MERN Stack. 
-- [x] Host the website on a cloud platform, such as Heroku.
-- [ ] Implement authetication/authorization and user-sessions for more personalized notes.
+- [x] Host the website on a cloud platform, such as Render.
+- [ ] Implement authentication/authorization to allow for user/member sign-up and login.
 
 ### Acknowledgments
 
